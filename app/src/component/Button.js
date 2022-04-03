@@ -10,6 +10,7 @@ export default class Button extends React.Component {
         primary: PropTypes.bool,
         disabled: PropTypes.bool,
         clickHandler: PropTypes.func,
+        active: PropTypes.bool
     };
 
     handleClick = () => {
@@ -21,6 +22,7 @@ export default class Button extends React.Component {
         const className = [
             "btn",
             this.props.primary ? "primary" : "",
+            this.props.active ? 'active': ""
         ]
 
         const type = [

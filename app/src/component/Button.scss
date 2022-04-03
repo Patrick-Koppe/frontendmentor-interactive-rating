@@ -1,15 +1,50 @@
 @import "color";
 
 .btn {
-
     display: inline-block;
+
+    button {
+        background: $mediumGrey;
+        border: none;
+        border-radius: 50%;
+        color: $lightGrey;
+        cursor: pointer;
+        font-weight: 700;
+        outline: none;
+        padding: 1rem 1.25rem;
+    }
+
+    &.active {
+        button {
+            background: $lightGrey;
+            color: $white;
+        }
+    }
+
+    &:hover {
+        button:not([disabled]) {
+            background: $orange;
+            color: $white;
+        }
+    }
 
     &.primary {
         width: 100%;
 
         button {
             background: $orange;
+            border-radius: 2rem;
+            color: $white;
+            padding: .5rem;
+            text-transform: uppercase;
             width: 100%;
+        }
+
+        &:hover {
+            button {
+                background: $white;
+                color: $orange;
+            }
         }
     }
 }
