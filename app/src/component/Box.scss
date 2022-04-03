@@ -1,0 +1,11 @@
+@import "./color";
+
+.box {
+    background: $darkBlue;
+    border-radius: 0.5rem;
+    color: $white;
+    display: inline-block;
+    margin: 0 auto;
+    padding: 2rem;
+    max-width: 330px;
+}

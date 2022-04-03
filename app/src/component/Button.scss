@@ -1,0 +1,15 @@
+@import "color";
+
+.btn {
+
+    display: inline-block;
+
+    &.primary {
+        width: 100%;
+
+        button {
+            background: $orange;
+            width: 100%;
+        }
+    }
+}
