@@ -5,16 +5,30 @@ import './Button.scss';
 
 export default class Button extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            active: false,
+        };
+    }
+
     static propTypes = {
         value: PropTypes.string,
         primary: PropTypes.bool,
         disabled: PropTypes.bool,
         clickHandler: PropTypes.func,
-        active: PropTypes.bool
+        active: PropTypes.bool,
+    };
+
+    toggleClass() {
+        const currentState = this.state.active;
+        this.setState({ active: !currentState });
     };
 
     handleClick = () => {
         this.props.clickHandler(this.props.value);
+        this.setState({active: this.props.active});
+        this.toggleClass();
     }
 
     render() {
@@ -22,7 +36,7 @@ export default class Button extends React.Component {
         const className = [
             "btn",
             this.props.primary ? "primary" : "",
-            this.props.active ? 'active': ""
+            this.state.active ? 'active': ""
         ]
 
         const type = [

@@ -14,8 +14,11 @@ export default class Panel extends React.Component {
     }
 
     handleClick = buttonName => {
-
         console.log(buttonName);
+
+        this.setState({active: false});
+
+        console.log(this.state.active);
     }
 
     render() {
@@ -30,7 +33,7 @@ export default class Panel extends React.Component {
                     <Button active={this.state.active} value="5" clickHandler={this.handleClick}/>
                 </div>
                 <div className="row">
-                    <Button active={this.props.active} value="submit" primary clickHandler={this.handleClick}/>
+                    <Button value="submit" primary clickHandler={this.handleClick}/>
                 </div>
             </form>
         )
