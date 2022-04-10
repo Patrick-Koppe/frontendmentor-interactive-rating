@@ -1,3 +1,5 @@
+@import "./color";
+
 .button-panel {
     .row.margin {
         margin-bottom: 1rem;
@@ -7,4 +9,14 @@
         display: flex;
         justify-content: space-between;
     }
+}
+
+.box {
+    background: $darkBlue;
+    border-radius: 0.5rem;
+    color: $white;
+    display: inline-block;
+    margin: 0 auto;
+    padding: 2rem;
+    max-width: 330px;
 }

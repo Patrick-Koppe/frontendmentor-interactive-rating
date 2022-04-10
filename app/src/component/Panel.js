@@ -1,41 +1,103 @@
-import React from 'react'
+import React, { useState } from 'react'
+import TextField from './TextField';
 import Button from "./Button";
 
 import './Panel.scss';
 
-export default class Panel extends React.Component {
 
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            active: false,
-        };
+const allButtons = [
+    {
+        value: "1",
+        status : false,
+    },
+    {
+        value: "2",
+        status : false,
+    },
+    {
+        value: "3",
+        status : false,
+    },
+    {
+        value: "4",
+        status : false,
+    },
+    {
+        value: "5",
+        status : false,
+    },
+]
+
+const pages = [
+    {
+        description: "rating",
+        ratedValue: 0
+    }
+]
+
+const Panel = () => {
+
+    const [buttons, setButtons] = useState(allButtons);
+    const [page, setPage] = useState(pages)
+
+
+    const changeButtonStatus = (e, index) => {
+        e.preventDefault();
+        const newButtons = [...buttons];
+
+        
+        newButtons.map((button) => {
+            return button.status = false;
+        })
+
+        if(newButtons[index].status) {
+            newButtons[index].status = false;
+        } else {
+            newButtons[index].status = true;
+        }
+
+        setButtons(newButtons);
     }
 
-    handleClick = buttonName => {
-        console.log(buttonName);
+    const submit = (e, index) => {
+        e.preventDefault();
 
-        this.setState({active: false});
+        const rated = buttons.filter((button) => {
+            return button.status === true;
+        })
 
-        console.log(this.state.active);
+        const newPage = [...page];
+        newPage.map((item) => {
+            return item.description = "result",
+            item.ratedValue = rated[0].value;
+        })
+
+        setPage(newPage);
+
+        console.log('newPage', newPage);
     }
 
-    render() {
 
-        return (
+    return (
+        <div className='box'>
+            <TextField />
             <form className="button-panel">
                 <div className="row margin d-flex">
-                    <Button active={this.state.active} value="1" clickHandler={this.handleClick}/>
-                    <Button active={this.state.active} value="2" clickHandler={this.handleClick}/>
-                    <Button active={this.state.active} value="3" clickHandler={this.handleClick}/>
-                    <Button active={this.state.active} value="4" clickHandler={this.handleClick}/>
-                    <Button active={this.state.active} value="5" clickHandler={this.handleClick}/>
+                    {buttons.map((button, index) => {
+                        return (
+                            <Button onChangeStatus={changeButtonStatus} active={button.status} value={button.value} key={index} index={index}/>
+                        )
+                    })}
                 </div>
                 <div className="row">
-                    <Button value="submit" primary clickHandler={this.handleClick}/>
+                    <div className="btn primary">
+                        <button type="submit" onClick={submit}>SUBMIT</button>
+                    </div>
                 </div>
             </form>
-        )
-    }
+        </div>
+      )
 }
+
+export default Panel
