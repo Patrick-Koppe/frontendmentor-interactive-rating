@@ -9,9 +9,17 @@
         border-radius: 50%;
         color: $lightGrey;
         cursor: pointer;
+        font-family: 'Overpass', sans-serif;
         font-weight: 700;
         outline: none;
-        padding: 1rem 1.25rem;
+        transition: background .2s ease-in-out, color .4s ease-in-out;
+    }
+
+    &:hover {
+        button:not([disabled]) {
+            background: $orange;
+            color: $white;
+        }
     }
 
     &.active {
@@ -21,10 +29,9 @@
         }
     }
 
-    &:hover {
-        button:not([disabled]) {
-            background: $orange;
-            color: $white;
+    &.disabled {
+        button {
+            cursor: unset;
         }
     }
 
@@ -35,7 +42,7 @@
             background: $orange;
             border-radius: 2rem;
             color: $white;
-            padding: .5rem;
+            padding: .75rem;
             text-transform: uppercase;
             width: 100%;
         }
@@ -45,6 +52,13 @@
                 background: $white;
                 color: $orange;
             }
+        }
+    }
+
+    &:not(.primary) {
+        button {
+            height: 45px;
+            width: 45px;
         }
     }
 }

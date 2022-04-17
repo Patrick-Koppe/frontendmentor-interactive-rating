@@ -2,15 +2,26 @@ import React from 'react';
 
 import './Button.scss';
 
-const Button = ({value, active, onChangeStatus, index}) => {
+// 2 types of buttons are available
+const Button = ({value, active, onChangeStatus, index, className}) => {
 
-    return (
-        <div className={active ? "btn active" : "btn"}>
-           <button onClick={(e) => {onChangeStatus(e, index)}}>
-               {value}
-           </button>
-        </div>
-    )
+    if (className === 'btn disabled') {
+        return (
+            <div className={className}>
+                <button disabled="disabled">
+                    <img src={value} alt="icon star" />
+                </button>
+            </div>
+        )
+    } else {
+        return (
+            <div className={active ? "btn active" : "btn"}>
+                <button onClick={(e) => {onChangeStatus(e, index)}}>
+                    {value}
+                </button>
+            </div>
+        )
+    }
 }
 
 export default Button

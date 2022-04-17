@@ -1,0 +1,12 @@
+@import "color";
+
+.text-label {
+    background: $mediumGrey;
+    border: none;
+    border-radius: 20px;
+    color: $orange;
+    display: inline-block;
+    outline: none;
+    padding: .5rem .75rem;
+    text-align: center;
+}
