@@ -6,7 +6,9 @@ This is a solution to the [Interactive rating component challenge on Frontend Me
 
 - [Overview](#overview)
     - [The challenge](#the-challenge)
-    - [Screenshot](#screenshot)
+    - Screenshots:
+      - [Screenshot 1](./screenshot.png)
+        [Screenshot 2](./screenshot2.png)
     - [Links](#links)
 - [My process](#my-process)
     - [Built with React](https://reactjs.org/)
@@ -31,8 +33,8 @@ Users should be able to:
 
 ### Screenshot
 
-[Screenshot](./screenshot.png)
-
+[Screenshot 1](./screenshot.png)
+[Screenshot 2](./screenshot2.png)
 
 ### Links
 
