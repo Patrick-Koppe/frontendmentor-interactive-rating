@@ -36,8 +36,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Github React Branch](https://github.com/Patrick-Koppe/frontendmentor-interactive-rating/tree/react/app)
+- Live Site URL: [Rating Patrick Koppe](http://rating-box.patrickkoppe.de/)
 
 ## My process
 
